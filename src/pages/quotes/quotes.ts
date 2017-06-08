@@ -40,6 +40,7 @@ quoteGroup: {category:string,quotes: Quote[], icon:String,};
           },
           {
             text: "Dismiss",
+            role: 'cancel',
             handler: () => {
               console.log("Your quote sucks bro");
             }
