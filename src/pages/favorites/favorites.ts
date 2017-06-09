@@ -21,7 +21,7 @@ export class FavoritesPage {
   }
 
   viewQuote(card: Quote){
-    const modal = this.modalController.create(QuotePage);
+    const modal = this.modalController.create(QuotePage, card);
     modal.present();
   }
 
