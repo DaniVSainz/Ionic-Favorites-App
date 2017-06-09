@@ -1,34 +1,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Favorites</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu">
+        </ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title text-center>Favorite Quotes</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
-<!--<ion-content padding>
-  <ion-list>
-    <ion-card *ngFor="let card of quotes">
-      <ion-card-content>
-        <ion-card-header>{{card.person}}</ion-card-header>
-        <ion-card-content>
-          <p class="card-para">{{card.text}}</p>
-        </ion-card-content>
-        <ion-row>
-          <ion-col text-right>
-            <button ion-button small clear (click)="onAddToFavorite(card)">Favorite!</button>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
-</ion-content>-->
-
+  
 <ion-content padding>
   <ion-list>
     <ion-item-sliding *ngFor="let card of quotes">
-      <ion-item (click)="viewQuote(card)" color="quoteBackground">
+      <ion-item (click)="viewQuote(card)" [color]="getBackground()">
         <h2>{{card.person}}</h2>
         <p class="card-para">{{card.text}}</p>
       </ion-item>
