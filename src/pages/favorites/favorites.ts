@@ -23,6 +23,15 @@ export class FavoritesPage {
   viewQuote(card: Quote){
     const modal = this.modalController.create(QuotePage, card);
     modal.present();
+    modal.onDidDismiss((remove:boolean) => {
+      if (remove){
+        this.quotesService.removeQuoteFromFavorites(card);
+        this.quotes = this.quotesService.getFavoriteQuotes();
+      }
+    });
+
   }
+
+
 
 }
